@@ -33,7 +33,7 @@ class Add(webapp2.RequestHandler):
         f_sparse_binding = self.request.get("filter_sparse_binding") == "on"
         f_texture_compressionETC2 = self.request.get("filter_texture_compressionETC2") == "on"
         f_vertex_pipeline_stores = self.request.get("filter_vertex_pipeline_stores") == "on"
-        error = 'The GPU name already exists'
+
 
         user_array = MyGpu.query()
 
@@ -88,12 +88,6 @@ class Add(webapp2.RequestHandler):
 
         mygpu_key = ndb.Key('MyGpu', name)
         mygpu = mygpu_key.get()
-
-        if name == mygpu:
-            
-            return self.response.write("Same name exists")
-        else:
-            return self.response.write("")
 
         if mygpu:
             return self.redirect('/')
