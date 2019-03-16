@@ -1,0 +1,30 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Add GPU</title>
+</head>
+<body>
+	<br /> <p align = "center">Enter your GPU details in the system</p>
+	<br />
+	<br>
+	<form method="post" action="/add" >
+		<fieldset style = "text-align:center;">
+		<legend><b><i>Add GPU Details</i></b></legend>
+		Name:<input type="text" name="users_name" required /> <br /><br />
+		Manufacturer:<input type="text" name="users_manufacturer" required/> <br /><br />
+		Dated Issued:<input type="date" name="users_date_issued" required/> <br /><br />
+		<input type="checkbox" name="users_geometry_shader" />Geometry Shader <br /><br />
+		<input type="checkbox" name="users_tesselation_shader" />Tesselation Shader <br /><br />
+		<input type="checkbox" name="users_shaderInt16" />ShaderInt16<br /><br />
+		<input type="checkbox" name="users_sparse_binding" />Sparse Binding <br /><br />
+		<input type="checkbox" name="users_texture_compressionETC2" />Texture CompressionETC2 <br /><br />
+		<input type="checkbox" name="users_vertex_pipeline_stores" />Vertex Pipeline Stores and Atomics <br /><br />
+
+
+		<input type="submit" value="Submit" name="button"/>
+
+	</fieldset>
+	</form>
+	<p align="center"><a href="/">Home</a></p>
+</body>
+</html>

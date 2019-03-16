@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>GPU Information</title>
+</head>
+<style>
+table, tr,td {
+  border: 1px solid black;
+	autowidth : true;
+}
+</style>
+<body>
+	<P align="center"><br/> GPU Information and its Features</P>
+	<br />
+	<br>
+	<p align="center">Below is the information of GPU: {{ mygpu.key.id() }}</p>
+	<form method="post" action="/GPUinfo" align="center">
+		<table align = "center">
+			 <tr><td><b> GPU Name</b></td><td>{{ mygpu.key.id() }}</td></tr>
+			 <tr><td><b> Manufacturer</b></td><td>{{ mygpu.manufacturer }}</td></tr>
+			 <tr><td><b> Date Issued</b></td><td>{{ mygpu.date_issued }}</td></tr>
+			 <tr><td><b> Geometry Shader</b></td><td>{{ mygpu.geometry_shader }}</td></tr>
+			 <tr><td><b> Tesselation Shader</b></td><td>{{ mygpu.tesselation_shader }}</td></tr>
+			 <tr><td><b> ShaderInt16</b></td><td>{{ mygpu.shaderInt16 }}</td></tr>
+			 <tr><td><b> Sparse Binding</b></td><td>{{ mygpu.sparse_binding }}</td></tr>
+			 <tr><td><b> Texture CompressionETC2</b></td><td>{{ mygpu.texture_compressionETC2 }}</td></tr>
+			 <tr><td><b> Vertex Pipeline Stores and Atomics</b></td><td>{{ mygpu.vertex_pipeline_stores }}</td></tr>
+
+		</table>
+	</form>
+	<p align="center">Click here to edit the GPU Details &nbsp;&nbsp;&nbsp;<a href="/editGPU?name={{ mygpu.key.id() }}">{{ mygpu.key.id() }}</a></p>
+	<p align="center">
+		<a href='/'>Home	</a></br></br>
+		<a href="/add">Add GPU</a></br>
+	</p>
+</body>
+</html>

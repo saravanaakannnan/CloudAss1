@@ -1,0 +1,51 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>User login/logout with datastore</title>
+</head>
+<style>
+table, th, td {
+  border: 1px solid black;
+	autowidth : true;
+}
+</style>
+<body>
+  <h2 align="center">GPU Application</h2>
+	<P align=center>{% if user %} {{ welcome }} {{ user.email() }}
+		welcome to the application</P>
+	<p align=center>
+		<br />
+		<a href="/">Home</a> </br>
+		<a href="/add">Add GPU</a></br>
+		<a href="/FeatureSearch">Search</a></br>
+		<a href="/CompareGPU">Compare GPU</a></br>
+	</p>
+	<h2 style="text-align: center">GPU List</h2>
+	<form method="get"
+		onsubmit="try {return window.confirm(&quot;This form may not function properly due to certain security constraints.\nContinue?&quot;);} catch (e) {return false;}">
+		<table align="center">
+			<tbody>
+				<tr>
+					<td><b>GPU&#39;s name</td>
+
+				</tr>
+				<td>{% for mygpu in user_array %}
+				<tr>
+					<td><a href="/GPUinfo?name={{
+							mygpu.key.id() }}"> {{
+							mygpu.key.id() }} </a></td>
+				</tr>
+				<td>{% endfor %}</td>
+				</td>
+			</tbody>
+		</table>
+	</form>
+	</div>
+	{% else %}
+	<p align=center>Hello guest welcome to the application</p>
+	{% endif %}
+	<br><br><p align=center>
+		you can {{ url_string }} <a href='{{ url }}'>here</a>
+	</p>
+</body>
+</html>

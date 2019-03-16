@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPU list</title>
+</head>
+<body>
+<form method="GET">
+<fieldset align="center">
+  <legend><b><i>Compare Your GPUs here</i></b></legend>
+<select required name="GPU1">
+	<option value="">GPU1</option>
+	{% for mygpu in gpu_array %}
+    <option value="{{ mygpu.key.id() }}">{{ mygpu.key.id() }}</option>
+    {% endfor %}
+  </select>
+
+  <select required name="GPU2">
+  	<option value="">GPU2</option>
+  {% for mygpu in gpu_array %}
+    <option  value="{{ mygpu.key.id() }}">{{ mygpu.key.id() }}</option>
+    {% endfor %}
+  </select>
+  <input type="submit" value="Compare" name="compare" />
+  <br>
+  </form>
+  <form method="get">
+
+
+  		<table align="center" {% if firstgpu != secondgpu %}>
+  <tr>
+  <td>GPU name</td>
+  <td>{{ firstgpu }}</td>
+  <td align="right">{{ secondgpu }}</td>
+  </tr>
+    <tr>
+        <td>Geometry Shader</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.geometry_shader }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.geometry_shader }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+            <td>Tesselation Shader</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.tesselation_shader }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.tesselation_shader }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+            <td>ShaderInt16</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.shaderInt16 }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.shaderInt16 }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+            <td>Sparse Binding</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.sparse_binding }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.sparse_binding }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+            <td>Texture CompressionETC2</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.texture_compressionETC2 }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.texture_compressionETC2 }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+            <td>Vertex Pipeline Stores</td>
+        {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == firstgpu %}>{{ mygpu.vertex_pipeline_stores }}</td {% endif %}>
+        {% endfor %}
+                {% for mygpu in gpu_array %}
+
+        <td {% if mygpu.key.id()  == secondgpu %}>{{ mygpu.vertex_pipeline_stores }}</td {% endif %}>
+        {% endfor %}
+    </tr>
+    <tr>
+      <p {% else %}>{{ error }} </p>
+
+    </tr></table {% endif %}>
+
+
+  </fieldset>
+    <br>
+    <p align="center"><a href= "/">HOME</a></p>
+</body>
+</html>

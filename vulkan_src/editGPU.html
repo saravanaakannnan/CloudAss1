@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Update GPU information</title>
+	</head>
+	<body>
+		<form method = "post" align="center">
+			<fieldset>
+				<legend><i><b>Edit Your GPU Details here..</legend>
+			  GPU Name:<input type = "text" name ="name" value ="{{ mygpu.key.id() }}" required/></br></br>
+			  Manufacturer's Name: <input type = "text" name = "manufacturer" value = "{{ mygpu.manufacturer }}" size="30" required/></br></br>
+			  Date Issued: <input type = "date" name = "date_issued" value ="{{ mygpu.date_issued }}" size="30" required/></br></br>
+				<input type = "checkbox" name ="geometryShader" {% if mygpu.geometry_shader %} checked {% endif %} />Geometry Try Shader</br></br>
+				<input type = "checkbox" name ="tesselationShader" {% if mygpu.tesselation_shader %} checked {% endif %} />Tesselation Shader</br></br>
+				<input type = "checkbox" name ="shaderInt16" {% if mygpu.shaderInt16 %} checked {% endif %}  />Shader Int16</br></br>
+				<input type = "checkbox" name ="sparseBinding" {% if mygpu.sparse_binding %} checked {% endif %} />Sparse Binding</br></br>
+				<input type = "checkbox" name ="textureCompressionETC2" {% if mygpu.texture_compressionETC2 %} checked {% endif %} />Texture Compression ETC2</br></br>
+				<input type = "checkbox" name ="vertexPipelineStores" {% if mygpu.vertex_pipeline_stores %} checked {% endif %} />Vertex Pipeline Stores And Atomics</br></br>
+
+			<button type="submit">Update</button>
+			<button type="submit">Cancel</button>
+			</fieldset>
+			<p align ="center" ><a href="/">Home</a> </br>
+			<a href="/add">Add GPU</a></br></p>
+		</form>
+	</body>
+</html>
