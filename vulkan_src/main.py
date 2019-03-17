@@ -41,7 +41,7 @@ class MainPage(webapp2.RequestHandler):
         f_sparse_binding = self.request.get("filter_sparse_binding") == "on"
         f_texture_compressionETC2 = self.request.get("filter_texture_compressionETC2") == "on"
         f_vertex_pipeline_stores = self.request.get("filter_vertex_pipeline_stores") == "on"
-        
+
         user_array = MyGpu.query()
 
         if f_geometry_shader:
@@ -93,7 +93,7 @@ class MainPage(webapp2.RequestHandler):
         name = self.request.get('users_name')
 
         mygpu_key = ndb.Key('MyGpu', name)
-        mygpu = myuser_key.get()
+        mygpu = mygpu_key.get()
 
         if myuser:
             return self.redirect("/")

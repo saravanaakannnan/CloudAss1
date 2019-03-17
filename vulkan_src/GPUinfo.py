@@ -83,7 +83,7 @@ class GPUINFO(webapp2.RequestHandler):
 		mygpu.sparse_binding = self.request.get('sparse_binding') == "on"
 		mygpu.texture_compressionETC2 = self.request.get('texture_compressionETC2') == "on"
 		mygpu.vertex_pipeline_stores = self.request.get('vertex_pipeline_stores') == "on"
-		
+
 
 		mygpu.put()
 
