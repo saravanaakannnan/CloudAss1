@@ -66,7 +66,7 @@ class Add(webapp2.RequestHandler):
             'f_sparse_binding' : f_sparse_binding,
             'f_texture_compressionETC2' : f_texture_compressionETC2,
             'f_vertex_pipeline_stores' : f_vertex_pipeline_stores,
-            'error' : error
+
             }
         template = JINJA_ENVIRONMENT.get_template('add.html')
         self.response.write(template.render(template_values))

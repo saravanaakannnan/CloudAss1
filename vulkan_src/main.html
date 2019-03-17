@@ -11,8 +11,8 @@ table, th, td {
 </style>
 <body>
   <h2 align="center">GPU Application</h2>
-	<P align=center>{% if user %} {{ welcome }} {{ user.email() }}
-		welcome to the application</P>
+	<em><h3 align=center>{% if user %} {{ welcome }} {{ user.email() }}
+		welcome to the application</h3></em>
 	<p align=center>
 		<br />
 		<a href="/">Home</a> </br>
@@ -45,7 +45,7 @@ table, th, td {
 	<p align=center>Hello guest welcome to the application</p>
 	{% endif %}
 	<br><br><p align=center>
-		you can {{ url_string }} <a href='{{ url }}'>here</a>
+		You can {{ url_string }} <a href='{{ url }}'>here</a>
 	</p>
 </body>
 </html>
